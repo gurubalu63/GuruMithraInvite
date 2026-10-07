@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guru &amp; Mithra — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mukta:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7B1E2B;
+    --maroon-dark:#54121C;
+    --gold:#C69A3E;
+    --gold-light:#E7CE8F;
+    --cream:#FBF1DE;
+    --teal:#1F4B3F;
+    --ink:#2E1710;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:inherit;margin:0;padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  html,body{height:auto;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Mukta',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .kolam-draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s ease forwards .3s;}
+    .fade-in{opacity:0;animation:fadeIn 1s ease forwards 1.6s;}
+    @keyframes draw{to{stroke-dashoffset:0;}}
+    @keyframes fadeIn{to{opacity:1;}}
+  }
+
+  .border-strip{width:100%;height:26px;display:block;}
+  .border-strip.top{background:var(--maroon);}
+  .border-strip.bottom{background:var(--maroon);}
+
+  header.hero{
+    position:relative;
+    background:var(--maroon);
+    color:var(--gold-light);
+    text-align:center;
+    padding:64px 20px 72px;
+    overflow:hidden;
+  }
+  header.hero::before,
+  header.hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:14px;
+    background-image: radial-gradient(circle, var(--gold) 2.5px, transparent 2.6px);
+    background-size: 28px 14px;
+    background-position: center;
+    opacity:.55;
+  }
+  header.hero::before{top:14px;}
+  header.hero::after{bottom:14px;}
+
+  .arch{max-width:220px;margin:0 auto 18px;display:block;}
+  .om{margin:0 auto 6px;display:block;}
+
+  .eyebrow{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.05rem;
+    letter-spacing:.03em;
+    color:var(--gold-light);
+    opacity:.9;
+  }
+  h1.names{
+    font-family:'Marcellus',serif;
+    font-size:clamp(2.6rem,8vw,4.4rem);
+    line-height:1.15;
+    margin:18px 0 6px;
+    color:var(--gold-light);
+  }
+  h1.names .amp{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:.42em;
+    color:var(--gold);
+    margin:2px 0;
+  }
+  .hero-sub{
+    font-size:1.05rem;
+    max-width:34ch;
+    margin:14px auto 0;
+    color:#F3E4C6;
+  }
+  .hero-date{
+    margin-top:28px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;
+    letter-spacing:.04em;
+    color:var(--gold-light);
+  }
+  .hero-date span{display:block;font-family:'Mukta',sans-serif;font-size:.85rem;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;}
+
+  main{max-width:640px;margin:0 auto;padding:0 20px;}
+
+  section{padding:56px 0;border-bottom:1px solid rgba(123,30,43,.15);}
+  section:last-of-type{border-bottom:none;}
+
+  .section-title{
+    font-family:'Marcellus',serif;
+    font-size:1.9rem;
+    color:var(--maroon);
+    text-align:center;
+    margin-bottom:8px;
+  }
+  .section-lede{
+    text-align:center;
+    max-width:42ch;
+    margin:0 auto 34px;
+    color:#5A3A2E;
+    font-size:1rem;
+  }
+
+  .details-card{
+    background:#fff;
+    border:1px solid var(--gold-light);
+    border-radius:4px;
+    padding:34px 28px;
+    text-align:center;
+    position:relative;
+  }
+  .details-card::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px solid var(--gold);
+    border-radius:2px;
+    pointer-events:none;
+    opacity:.5;
+  }
+  .venue-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.55rem;
+    color:var(--maroon-dark);
+    margin:6px 0 4px;
+  }
+  .venue-label{font-size:.8rem;letter-spacing:.12em;color:var(--gold);}
+  .directions-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:var(--teal);
+    color:var(--cream);
+    text-decoration:none;
+    border-radius:2px;
+    font-size:.95rem;
+    letter-spacing:.03em;
+    transition:background .2s ease;
+  }
+  .directions-btn:hover{background:#163a30;}
+  .directions-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .countdown .unit{
+    min-width:78px;
+    text-align:center;
+  }
+  .countdown .num{
+    font-family:'Marcellus',serif;
+    font-size:2.2rem;
+    color:var(--maroon);
+    display:block;
+  }
+  .countdown .lbl{
+    font-size:.72rem;
+    letter-spacing:.14em;
+    color:#8a6a52;
+  }
+
+  .blessing{
+    text-align:center;
+  }
+  .blessing p{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--maroon-dark);
+    max-width:36ch;
+    margin:0 auto;
+  }
+
+  footer{
+    text-align:center;
+    padding:38px 20px 48px;
+    background:var(--maroon);
+    color:var(--gold-light);
+    font-size:.85rem;
+    letter-spacing:.05em;
+  }
+  footer .names-sm{
+    font-family:'Marcellus',serif;
+    font-size:1.1rem;
+    margin-bottom:6px;
+    color:var(--gold);
+  }
+
+  html.locked, html.locked body{overflow:hidden;height:100%;}
+
+  .cover{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:#0E0E0E;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    padding:16px;
+    overflow-y:auto;
+    transition:opacity .7s ease, visibility .7s ease;
+  }
+  .cover.hide{opacity:0;visibility:hidden;pointer-events:none;}
+  .cover{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .cover-img{
+    width:auto;
+    max-width:100%;
+    height:auto;
+    max-height:82vh;
+    object-fit:contain;
+    display:block;
+  }
+  .welcome-page{
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:var(--cream);
+  }
+  .welcome-page img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+  .cover .open-btn{
+    font-size:.8rem;
+    padding:10px 26px;
+  }
+  .open-btn{
+    appearance:none;
+    border:1px solid #2F6B4F;
+    background:#2F6B4F;
+    color:#F3E4C6;
+    font-family:'Mukta',sans-serif;
+    font-weight:500;
+    font-size:.95rem;
+    letter-spacing:.08em;
+    padding:14px 34px;
+    border-radius:2px;
+    cursor:pointer;
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 4px 18px rgba(0,0,0,.35);
+    transition:background .25s ease, transform .2s ease;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .open-btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:2px;
+      border:1px solid #2F6B4F;
+      animation:pulseRing 1.8s ease-out infinite;
+    }
+    @keyframes pulseRing{
+      0%{opacity:.7;transform:scale(1);}
+      100%{opacity:0;transform:scale(1.25);}
+    }
+  }
+  .open-btn:hover{background:#255740;}
+  .open-btn:active{transform:scale(.98);}
+  .open-btn:focus-visible{outline:2px solid #F3E4C6;outline-offset:4px;}
+
+
+
+
+  /* Wedding celebrations — final page */
+  .celebrations-page{
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:64px 20px;
+    background:var(--cream);
+    position:relative;
+  }
+  .celebrations-inner{
+    width:100%;
+    max-width:640px;
+    text-align:center;
+  }
+  .celebrations-kicker{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:1.15rem;
+    margin-bottom:6px;
+  }
+  .celebrations-title{
+    font-family:'Marcellus',serif;
+    color:var(--maroon);
+    font-size:clamp(2rem,7vw,3rem);
+    margin-bottom:10px;
+  }
+  .celebrations-divider{
+    color:var(--gold);
+    font-size:1.4rem;
+    margin-bottom:28px;
+  }
+  .celebration-card{
+    background:#fff;
+    border:1px solid var(--gold-light);
+    border-radius:4px;
+    padding:24px 22px;
+    margin:0 0 16px;
+    position:relative;
+    box-shadow:0 5px 18px rgba(84,18,28,.06);
+  }
+  .celebration-card::before{
+    content:"";
+    position:absolute; inset:7px;
+    border:1px solid var(--gold);
+    border-radius:2px;
+    opacity:.35;
+    pointer-events:none;
+  }
+  .celebration-name{
+    font-family:'Marcellus',serif;
+    color:var(--maroon-dark);
+    font-size:1.35rem;
+    margin-bottom:8px;
+  }
+  .celebration-tamil{
+    font-family:'Noto Sans Tamil','Noto Sans',sans-serif;
+    color:var(--gold);
+    font-size:1.05rem;
+    margin:-2px 0 10px;
+    letter-spacing:.02em;
+  }
+  .celebration-detail{
+    color:#5A3A2E;
+    font-size:1rem;
+    margin:3px 0;
+  }
+  .celebration-detail strong{color:var(--maroon-dark);font-weight:600;}
+  .celebration-location{
+    display:inline-block;
+    margin-top:12px;
+    padding:9px 20px;
+    background:var(--teal);
+    color:var(--cream);
+    text-decoration:none;
+    border-radius:2px;
+    font-size:.9rem;
+    letter-spacing:.03em;
+    position:relative;
+    z-index:1;
+  }
+  .celebration-location:hover{background:#163a30;}
+
+  .engagement-illustration{
+    width:min(100%,260px);
+    margin:-4px auto 14px;
+    position:relative;
+    z-index:1;
+  }
+  .engagement-illustration img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:310px;
+    object-fit:contain;
+    border-radius:0;
+  }
+  .reception-card{
+    display:grid;
+    grid-template-columns:minmax(150px, 34%) 1fr;
+    gap:18px;
+    align-items:center;
+  }
+  .reception-card::before{z-index:0;}
+  .reception-image{
+    width:100%;
+    max-height:280px;
+    object-fit:contain;
+    display:block;
+    position:relative;
+    z-index:1;
+    border-radius:4px;
+  }
+  .reception-info{
+    position:relative;
+    z-index:1;
+  }
+  @media(max-width:480px){
+    .reception-card{grid-template-columns:minmax(90px,34%) 1fr;gap:12px;align-items:center;}
+    .reception-image{max-height:200px;width:100%;margin:0;}
+  }
+
+  .muhurtham-card{
+    display:grid;
+    grid-template-columns:1fr minmax(120px, 38%);
+    gap:14px;
+    align-items:center;
+  }
+  .muhurtham-info{position:relative;z-index:1;}
+  .muhurtham-image{
+    width:100%;
+    height:auto;
+    max-height:260px;
+    object-fit:contain;
+    display:block;
+    position:relative;
+    z-index:1;
+  }
+  @media(max-width:480px){
+    .muhurtham-card{grid-template-columns:1fr 36%;gap:10px;}
+  }
+
+  .engagement-card{
+    display:grid;
+    grid-template-columns:minmax(120px, 38%) 1fr;
+    gap:14px;
+    align-items:center;
+  }
+  .engagement-card .engagement-illustration{width:100%;margin:0;}
+  .engagement-info{position:relative;z-index:1;}
+  @media(max-width:480px){
+    .engagement-card{grid-template-columns:36% 1fr;gap:10px;}
+  }
+
+  /* Note for our dear guests — closing page */
+  .note-page{
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:64px 20px;
+    background:#FBF1DE;
+    position:relative;
+    flex-direction:column;
+  }
+  .note-contact{width:100%;max-width:560px;text-align:center;}
+  .note-inner{
+    width:100%;
+    max-width:560px;
+    text-align:center;
+    background:#fff;
+    border:1px solid var(--gold-light);
+    border-radius:4px;
+    padding:44px 26px;
+    position:relative;
+    box-shadow:0 5px 18px rgba(84,18,28,.06);
+  }
+  .note-inner::before{
+    content:"";
+    position:absolute; inset:7px;
+    border:1px solid var(--gold);
+    border-radius:2px;
+    opacity:.35;
+    pointer-events:none;
+  }
+  .note-kicker{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:1.2rem;
+    margin-bottom:6px;
+  }
+  .note-title{
+    font-family:'Marcellus',serif;
+    color:var(--maroon);
+    font-size:clamp(1.7rem,6.5vw,2.4rem);
+    line-height:1.25;
+    margin-bottom:14px;
+  }
+  .note-forever{
+    font-family:'Marcellus',serif;
+    color:var(--maroon-dark);
+    font-size:1.25rem;
+    letter-spacing:.06em;
+  }
+  .note-infinity{
+    color:var(--gold);
+    font-size:2.6rem;
+    line-height:1.2;
+    margin:2px 0 18px;
+  }
+  .note-quote{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--maroon-dark);
+    font-size:clamp(1.25rem,4.6vw,1.6rem);
+    line-height:1.5;
+    margin:0 auto 22px;
+  }
+  .note-invite{
+    color:#5A3A2E;
+    font-size:1.05rem;
+    line-height:1.6;
+    margin-bottom:22px;
+  }
+  .note-love{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--maroon-dark);
+    font-size:1.2rem;
+  }
+  .note-names{
+    font-family:'Marcellus',serif;
+    color:var(--maroon);
+    font-size:1.6rem;
+    margin-top:4px;
+  }
+  .note-names .heart{color:#C0392B;margin:0 4px;}
+
+  .contact-details{
+    margin-top:28px;
+    padding:22px 18px 20px;
+    background:#fff;
+    border:1px solid var(--gold-light);
+    box-shadow:0 5px 18px rgba(84,18,28,.06);
+    position:relative;
+  }
+  .contact-title{
+    font-family:'Marcellus',serif;
+    color:var(--maroon);
+    font-size:1.25rem;
+    margin:0 0 16px;
+  }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:10px 0;
+    border-top:1px solid rgba(198,154,62,.22);
+  }
+  .contact-row:first-of-type{border-top:0;}
+  .contact-side{
+    text-align:left;
+    color:var(--maroon-dark);
+    font-family:'Marcellus',serif;
+    font-size:.98rem;
+    min-width:92px;
+  }
+  .contact-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .contact-action{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    border:1px solid var(--gold);
+    background:#fffaf0;
+    color:var(--maroon);
+    transition:transform .2s ease, background .2s ease;
+  }
+  .contact-action:hover{transform:translateY(-2px);background:#f7ead0;}
+  .contact-action svg{width:19px;height:19px;fill:currentColor;}
+  .contact-number{
+    color:#5A3A2E;
+    font-size:.9rem;
+    margin-left:auto;
+    white-space:nowrap;
+  }
+  @media(max-width:480px){
+    .engagement-illustration{width:min(100%,220px);}
+    .engagement-illustration img{max-height:260px;}
+    .contact-row{align-items:flex-start;}
+    .contact-number{font-size:.82rem;}
+    .contact-actions{gap:6px;}
+  }
+
+  .celebrations-closing{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--maroon-dark);
+    font-size:1.2rem;
+    margin-top:24px;
+  }
+
+  /* Times New Roman typography for the Date + Countdown page */
+  .scratch-page,
+  .scratch-page *{
+    font-family:'Cormorant Garamond',Georgia,serif !important;
+  }
+
+  /* Scratch-to-reveal wedding date page */
+  .scratch-page{
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:150px 20px 64px;
+    background-color:#FEF3E2;
+    border-bottom:1px solid rgba(123,30,43,.18);
+    position:relative;
+    overflow:hidden;
+  }
+  .scratch-page::before,
+  .scratch-page::after{display:none;}
+  .scratch-inner{
+    width:min(100%,440px);
+    text-align:center;
+    position:relative;
+    z-index:1;
+    padding:28px 20px 30px;
+    border-radius:18px;
+    background:transparent;
+  }
+  .scratch-inner::before,
+  .scratch-inner::after{
+    content:"✦";
+    position:absolute;
+    top:14px;
+    color:var(--gold);
+    font-size:1.25rem;
+    opacity:.75;
+  }
+  .scratch-inner::before{left:4%;}
+  .scratch-inner::after{right:4%;}
+  .scratch-eyebrow{
+    font-family:'Mukta',sans-serif;
+    font-size:.76rem;
+    letter-spacing:.24em;
+    color:var(--maroon);
+    margin:0 0 8px;
+    text-transform:uppercase;
+  }
+  .scratch-title{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(2rem,7vw,3rem);
+    line-height:1.05;
+    color:var(--maroon);
+    margin:0 0 10px;
+    text-transform:none;
+  }
+  .scratch-title::after{
+    content:"";
+    display:block;
+    width:78px;
+    height:1px;
+    margin:13px auto 14px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .scratch-subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#6D4A3A;
+    font-size:1.08rem;
+    margin:0 auto 27px;
+    max-width:32ch;
+  }
+  .scratch-mark{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:600;
+    color:var(--maroon);
+    font-size:clamp(1.55rem,5vw,2.1rem);
+    letter-spacing:.03em;
+    margin:0 0 2px;
+  }
+  .scratch-save{
+    font-family:'Marcellus',serif;
+    color:#A9782E;
+    font-size:clamp(.85rem,3vw,1rem);
+    letter-spacing:.28em;
+    margin:0 0 22px;
+    text-transform:uppercase;
+  }
+  .scratch-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:0 auto 20px;
+    color:var(--gold);
+  }
+  .scratch-divider::before,
+  .scratch-divider::after{
+    content:"";
+    width:70px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(198,154,62,.7));
+  }
+  .scratch-divider::after{
+    background:linear-gradient(90deg,rgba(198,154,62,.7),transparent);
+  }
+  .scratch-card{
+    position:relative;
+    width:min(100%,390px);
+    height:190px;
+    margin:0 auto;
+    border:2px solid var(--gold);
+    border-radius:10px;
+    background:linear-gradient(145deg,#fffdf7,#f7ead0);
+    box-shadow:0 12px 35px rgba(84,18,28,.14), inset 0 0 0 6px rgba(231,206,143,.25);
+    overflow:hidden;
+    touch-action:none;
+    user-select:none;
+  }
+  .scratch-card::before,
+  .scratch-card::after{
+    content:"";
+    position:absolute;
+    pointer-events:none;
+    border:1px solid rgba(198,154,62,.6);
+  }
+  .scratch-card::before{inset:12px;border-radius:5px;}
+  .scratch-card::after{inset:18px;border-radius:3px;border-color:rgba(123,30,43,.18);}
+  .revealed-date{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:0;
+    padding:20px;
+    color:var(--maroon-dark);
+  }
+  .revealed-date .small{
+    font-family:'Mukta',sans-serif;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    color:var(--gold);
+    margin-bottom:8px;
+  }
+  .revealed-date .date-main{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2rem,8vw,3rem);
+    font-weight:600;
+    line-height:1;
+    letter-spacing:.04em;
+  }
+  .revealed-date .date-day{
+    font-family:'Marcellus',serif;
+    font-size:.9rem;
+    letter-spacing:.14em;
+    margin-top:10px;
+    color:#6D4A3A;
+  }
+  #scratchCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    cursor:grab;
+    touch-action:none;
+  }
+  #scratchCanvas:active{cursor:grabbing;}
+  .scratch-hint{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    pointer-events:none;
+    color:#fff8e8;
+    text-shadow:0 1px 3px rgba(84,18,28,.4);
+  }
+  .scratch-hint strong{
+    font-family:'Marcellus',serif;
+    font-size:1.05rem;
+    letter-spacing:.08em;
+  }
+  .scratch-hint span{
+    margin-top:7px;
+    font-size:.78rem;
+    letter-spacing:.08em;
+  }
+  .scratch-countdown{
+    width:100%;
+    margin-top:28px;
+    padding:26px 0 4px;
+    border-top:1px solid rgba(198,154,62,.38);
+    border-bottom:none;
+    opacity:0;
+    transform:translateY(10px);
+    pointer-events:none;
+    transition:opacity .55s ease, transform .55s ease;
+  }
+  .scratch-page.revealed .scratch-countdown{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+  .scratch-countdown .section-title{
+    margin-bottom:6px;
+    color:var(--maroon);
+  }
+  .scratch-countdown .section-lede{
+    margin-bottom:20px;
+  }
+
+  .scratch-complete{
+    margin-top:18px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--maroon);
+    font-size:1.25rem;
+    opacity:0;
+    transform:translateY(6px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .scratch-page.revealed .scratch-complete{opacity:1;transform:translateY(0);}
+  .scratch-page.revealed .scratch-card{box-shadow:0 14px 40px rgba(84,18,28,.18), 0 0 0 4px rgba(198,154,62,.12);}
+  .scratch-page.revealed #scratchCanvas{display:none;}
+  .scratch-page.revealed .scratch-hint{display:none;}
+  .scratch-page.revealed .revealed-date{animation:dateReveal .8s ease both;}
+  @keyframes dateReveal{
+    from{opacity:0;transform:scale(.96);}
+    to{opacity:1;transform:scale(1);}
+  }
+  @media (max-width:480px){
+    .scratch-page{padding:205px 14px 48px;align-items:flex-start;}
+    .scratch-inner{padding:10px 8px 24px;}
+    .scratch-card{height:175px;}
+  }
+  .open-btn .door-icon{flex-shrink:0;}
+  .hand-point{
+    font-size:1.2em;
+    display:inline-block;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hand-point{animation:nudge 1s ease-in-out infinite;}
+    @keyframes nudge{
+      0%,100%{transform:translateX(0) rotate(0deg);}
+      50%{transform:translateX(6px) rotate(-8deg);}
+    }
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1B120C;
+      --ink:#F3E4C6;
+    }
+    :root:not([data-theme="light"]) .details-card{
+      background:#241812;
+      border-color:var(--gold);
+    }
+    :root:not([data-theme="light"]) .venue-name{color:var(--gold-light);}
+    :root:not([data-theme="light"]) .section-lede{color:#D8BFA0;}
+    :root:not([data-theme="light"]) section{border-color:rgba(230,196,143,.15);}
+  }
+</style>
+<style>
+  #musicToggle{
+    position:fixed; right:18px; bottom:18px; z-index:99999;
+    width:48px; height:48px; border-radius:50%;
+    border:1px solid #C69A3E; background:#54121C; color:#E7CE8F;
+    display:none; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 5px 18px rgba(0,0,0,.22);
+    font-size:24px; line-height:1; padding:0;
+  }
+  body.opened #musicToggle{display:flex}
+  #musicToggle:hover{transform:scale(1.05)}
+  #musicToggle:active{transform:scale(.97)}
+  #musicToggle .pause-icon{display:none}
+  #musicToggle.playing .play-icon{display:none}
+  #musicToggle.playing .pause-icon{display:inline-block}
+  #musicToggle.playing{background:#C69A3E; color:#54121C; border-color:#E7CE8F; animation:musicPulse 1.8s ease-out infinite}
+  #musicToggle.playing .pause-icon{animation:noteBob 1.2s ease-in-out infinite}
+  @keyframes musicPulse{
+    0%{box-shadow:0 5px 18px rgba(0,0,0,.22),0 0 0 0 rgba(198,154,62,.55)}
+    70%{box-shadow:0 5px 18px rgba(0,0,0,.22),0 0 0 14px rgba(198,154,62,0)}
+    100%{box-shadow:0 5px 18px rgba(0,0,0,.22),0 0 0 0 rgba(198,154,62,0)}
+  }
+  @keyframes noteBob{0%,100%{transform:translateY(1px) rotate(-6deg)}50%{transform:translateY(-2px) rotate(6deg)}}
+  @media (prefers-reduced-motion:reduce){#musicToggle.playing,#musicToggle.playing .pause-icon{animation:none}}
+  @media(max-width:600px){#musicToggle{right:14px;bottom:14px;width:44px;height:44px}}
+</style>
+
+<style>
+  #petals{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:5000;}
+  #petals .petal{
+    position:absolute; top:-40px;
+    line-height:1; opacity:0;
+    will-change:transform,opacity;
+    animation-name:petalFall;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    user-select:none;
+  }
+  @keyframes petalFall{
+    0%{transform:translate3d(0,-40px,0) rotate(0deg);opacity:0}
+    8%{opacity:.9}
+    50%{transform:translate3d(var(--sway),52vh,0) rotate(180deg)}
+    92%{opacity:.85}
+    100%{transform:translate3d(calc(var(--sway) * -0.4),108vh,0) rotate(360deg);opacity:0}
+  }
+  @media (prefers-reduced-motion:reduce){#petals{display:none}}
+</style>
+<style>
+  .celebrations-page{overflow-x:clip;}
+  .slide-from-right,.slide-from-left{
+    opacity:0;
+    transition:transform .9s cubic-bezier(.22,.75,.25,1), opacity .9s ease;
+    will-change:transform,opacity;
+  }
+  .slide-from-right{transform:translateX(70%);}
+  .slide-from-left{transform:translateX(-70%);}
+  .slide-from-right.in-view,.slide-from-left.in-view{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .slide-from-right,.slide-from-left{opacity:1;transform:none;transition:none;}
+  }
+</style>
+<style>
+  /* Temple gopuram watermark — sits BEHIND the content on the cream/date pages so text stays crisp */
+  :root{--temple-wm:url("assets/img1.webp");}
+  .scratch-page::before,
+  .celebrations-page::before,
+  .note-page::before{
+    content:"";
+    display:block;
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:var(--temple-wm),
+      linear-gradient(180deg,#8FC7E8 0%,#BEE0EE 20%,#EAD9C2 46%,#F8E7C6 62%,rgba(251,241,222,0) 84%);
+    background-position:center 14%, center top;
+    background-size:contain, 100% 100%;
+    background-repeat:no-repeat, no-repeat;
+    opacity:.32;
+  }
+  .scratch-inner,
+  .celebrations-inner,
+  .note-inner,
+  .note-contact{position:relative;z-index:1;}
+  @media (max-width:600px){
+    .scratch-page::before,
+    .celebrations-page::before,
+    .note-page::before{
+      background-size:85% auto, 100% 100%;
+      background-position:center 14%, center top;
+      opacity:.3;
+    }
+  }
+</style>
+<style>
+  /* Letter / book-page look for Engagement, Muhurtham and Reception */
+  .celebration-card{
+    --paper-bg:#FBF1DE;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255,255,255,.65), rgba(255,255,255,0) 70%),
+      radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0) 55%, rgba(176,128,58,.13) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .40  0 0 0 0 .20  .22 0 0 0 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+      linear-gradient(180deg,#FFFAEC 0%,#FAEDD0 100%);
+    border:1px solid #DFCB98;
+    border-radius:3px 9px 9px 3px;
+    padding:30px 24px 28px;
+    color:#3B2416;
+    box-shadow:
+      1px 1px 0 #F6EACB, 2px 2px 0 #E6D3A6,
+      3px 3px 0 #F6EACB, 4px 4px 0 #DFCB98,
+      0 14px 26px rgba(84,18,28,.16);
+  }
+  /* Spine shading — left-hand page (Engagement, Reception) */
+  .engagement-card,
+  .reception-card{
+    box-shadow:
+      inset 20px 0 22px -18px rgba(120,78,24,.40),
+      inset 2px 0 0 rgba(198,154,62,.35),
+      1px 1px 0 #F6EACB, 2px 2px 0 #E6D3A6,
+      3px 3px 0 #F6EACB, 4px 4px 0 #DFCB98,
+      0 14px 26px rgba(84,18,28,.16);
+  }
+  /* Spine shading — right-hand page (Muhurtham) */
+  .muhurtham-card{
+    border-radius:9px 3px 3px 9px;
+    box-shadow:
+      inset -20px 0 22px -18px rgba(120,78,24,.40),
+      inset -2px 0 0 rgba(198,154,62,.35),
+      -1px 1px 0 #F6EACB, -2px 2px 0 #E6D3A6,
+      -3px 3px 0 #F6EACB, -4px 4px 0 #DFCB98,
+      0 14px 26px rgba(84,18,28,.16);
+  }
+  /* Fine double-rule border like printed stationery */
+  .celebration-card::before{
+    inset:9px;
+    border:3px double var(--gold);
+    border-radius:2px;
+    opacity:.38;
+  }
+  /* Folded (dog-ear) corner on the outer top corner */
+  .celebration-card::after{
+    content:"";
+    position:absolute;
+    top:-1px;
+    width:32px;
+    height:32px;
+    z-index:0;
+    pointer-events:none;
+  }
+  .engagement-card::after,
+  .reception-card::after{
+    right:-1px;
+    background:linear-gradient(225deg,var(--paper-bg) 0 50%,#D8C287 50%,#F8EDCB 100%);
+    border-bottom-left-radius:7px;
+    box-shadow:-3px 3px 6px rgba(84,18,28,.22);
+  }
+  .muhurtham-card::after{
+    left:-1px;
+    background:linear-gradient(135deg,var(--paper-bg) 0 50%,#D8C287 50%,#F8EDCB 100%);
+    border-bottom-right-radius:7px;
+    box-shadow:3px 3px 6px rgba(84,18,28,.22);
+  }
+  /* White-background photos melt into the paper */
+  .engagement-card .engagement-illustration,
+  .muhurtham-image,
+  .reception-image{mix-blend-mode:multiply;}
+  /* Handwritten-letter typography */
+  .celebration-name{
+    font-size:1.65rem;
+    color:#54121C;
+    margin-bottom:4px;
+    letter-spacing:.02em;
+  }
+  .celebration-tamil{
+    color:#B0812A;
+    font-size:1.1rem;
+    margin:0 0 12px;
+  }
+  .celebration-tamil::after{
+    content:"\2014  \2726  \2014";
+    display:block;
+    color:var(--gold);
+    font-size:.8rem;
+    letter-spacing:.3em;
+    margin-top:6px;
+    opacity:.85;
+  }
+  .celebration-detail{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.22rem;
+    font-weight:600;
+    color:#4A2C1E;
+    margin:4px 0;
+  }
+  .celebration-detail strong{
+    font-family:'Marcellus',serif;
+    font-weight:400;
+    color:#7B1E2B;
+    letter-spacing:.04em;
+    font-size:.95em;
+  }
+  .celebration-location{
+    margin-top:14px;
+    border:1px solid #C69A3E;
+    box-shadow:0 2px 0 rgba(84,18,28,.25);
+  }
+  @media(max-width:480px){
+    .celebration-card{padding:26px 16px 24px;}
+    .celebration-name{font-size:1.45rem;}
+    .celebration-detail{font-size:1.02rem;margin:3px 0;}
+    .celebration-detail strong{font-size:.9em;letter-spacing:.02em;}
+  }
+</style>
+<style>
+  /* Petals and crackers only start after the date is scratched */
+  #petals{display:none;}
+  body.date-revealed #petals{display:block;}
+  #crackers{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5500;}
+  @media (prefers-reduced-motion:reduce){#crackers{display:none;}}
+</style>
+<style>
+  /* Add to calendar box */
+  .cal-box{
+    margin:30px auto 0;
+    max-width:380px;
+    padding:22px 20px 20px;
+    background:rgba(255,255,255,.72);
+    border:1px solid var(--gold);
+    border-radius:4px;
+    box-shadow:0 8px 22px rgba(84,18,28,.10), inset 0 0 0 4px rgba(255,255,255,.55), inset 0 0 0 5px rgba(198,154,62,.35);
+    text-align:center;
+  }
+  .cal-title{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    font-size:1.35rem; color:var(--maroon); margin-bottom:14px; letter-spacing:.02em;
+  }
+  .cal-title svg{width:22px;height:22px;color:var(--gold);}
+  .cal-row{margin:10px 0;}
+  .cal-label{
+    display:block; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:2px;
+  }
+  .cal-value{display:block; font-size:1.05rem; line-height:1.45; color:var(--maroon-dark);}
+  .cal-actions{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:18px;}
+  .cal-btn{
+    appearance:none; cursor:pointer; text-decoration:none;
+    font-size:.92rem; letter-spacing:.03em;
+    padding:10px 18px; border-radius:2px;
+    background:var(--teal); color:var(--cream); border:1px solid var(--teal);
+    transition:background .2s ease;
+  }
+  .cal-btn:hover{background:#163a30;}
+  .cal-btn-alt{background:transparent; color:var(--teal);}
+  .cal-btn-alt:hover{background:var(--teal); color:var(--cream);}
+  .cal-btn:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+</style>
+<style>
+  /* Richer gold scratch card + bigger one-line date */
+  .scratch-card{
+    border:3px solid #B98A16;
+    background:linear-gradient(145deg,#FFF1BF 0%,#F4D77E 45%,#E9BF48 100%);
+    box-shadow:0 14px 36px rgba(184,134,11,.45), 0 0 0 4px rgba(231,196,88,.35), inset 0 0 0 6px rgba(255,236,160,.55);
+  }
+  .scratch-card::before{border-color:rgba(122,80,6,.55);}
+  .scratch-card::after{border-color:rgba(123,30,43,.30);}
+  .scratch-page.revealed .scratch-card{
+    box-shadow:0 16px 44px rgba(184,134,11,.55), 0 0 0 4px rgba(231,196,88,.5);
+  }
+  .revealed-date .small{color:#7B1E2B;font-weight:600;}
+  .revealed-date .date-main{
+    white-space:nowrap;
+    font-size:clamp(1.55rem,7.4vw,2.8rem);
+    letter-spacing:.03em;
+    color:#4A0E18;
+  }
+  .revealed-date .date-day{
+    font-size:1.3rem;
+    letter-spacing:.24em;
+    margin-top:12px;
+    color:#6B1524;
+    font-weight:600;
+  }
+  @media (max-width:480px){
+    .revealed-date{padding:20px 12px;}
+  }
+</style>
+<style>
+  /* Open Maps button — red box, gold text, pill shape */
+  .celebration-location,
+  .celebration-location:visited{
+    background:linear-gradient(180deg,#8E2434 0%,#6E1826 100%);
+    color:#F2D585;
+    border:1px solid #C69A3E;
+    border-radius:999px;
+    padding:10px 26px;
+    font-weight:500;
+    letter-spacing:.06em;
+    box-shadow:0 3px 0 rgba(84,18,28,.35), 0 6px 14px rgba(84,18,28,.22);
+  }
+  .celebration-location:hover{
+    background:linear-gradient(180deg,#7B1E2B 0%,#54121C 100%);
+    color:#FFE7A3;
+  }
+  .celebration-location:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+</style>
+<style>
+  /* Elegant English typography */
+  :root{
+    --f-script:'Great Vibes','Snell Roundhand','Brush Script MT',cursive;
+    --f-display:'Cinzel','Trajan Pro','Marcellus',Georgia,serif;
+    --f-serif:'Cormorant Garamond',Georgia,serif;
+  }
+  body{font-family:var(--f-serif);font-weight:500;}
+
+  /* Date page */
+  .scratch-page .scratch-eyebrow{font-family:var(--f-display) !important;font-size:.78rem;letter-spacing:.34em;font-weight:500;}
+  .scratch-page .scratch-mark{font-family:var(--f-serif) !important;font-style:italic;font-size:1.4rem;font-weight:600;}
+  .scratch-page .scratch-title{font-family:var(--f-script) !important;font-style:normal;font-weight:400;font-size:clamp(2.1rem,9.6vw,3.1rem);line-height:1.2;letter-spacing:.01em;text-wrap:balance;}
+  .scratch-page .scratch-subtitle{font-family:var(--f-serif) !important;font-style:italic;font-size:1.28rem;font-weight:600;}
+  .scratch-page .scratch-hint strong{font-family:var(--f-display) !important;font-weight:600;letter-spacing:.16em;}
+  .scratch-page .scratch-hint span{font-family:var(--f-serif) !important;font-style:italic;font-size:1rem;font-weight:600;letter-spacing:.05em;}
+  .scratch-page .revealed-date .small{font-family:var(--f-display) !important;font-size:.68rem;letter-spacing:.26em;}
+  .scratch-page .revealed-date .date-main{font-family:var(--f-serif) !important;font-weight:700;}
+  .scratch-page .revealed-date .date-day{font-family:var(--f-display) !important;font-weight:500;font-size:1.2rem;letter-spacing:.3em;}
+  .scratch-page .scratch-countdown .section-title{font-family:var(--f-script) !important;font-weight:400;font-size:2.7rem;line-height:1.2;}
+  .scratch-page .scratch-countdown .section-lede{font-family:var(--f-serif) !important;font-style:italic;font-size:1.25rem;font-weight:600;}
+  .scratch-page .countdown .num{font-family:var(--f-serif) !important;font-weight:700;font-size:2.4rem;}
+  .scratch-page .countdown .lbl{font-family:var(--f-display) !important;font-size:.66rem;letter-spacing:.22em;}
+  .scratch-page .cal-title{font-family:var(--f-script) !important;font-size:1.9rem;font-weight:400;}
+  .scratch-page .cal-label{font-family:var(--f-display) !important;font-size:.7rem;letter-spacing:.28em;}
+  .scratch-page .cal-value{font-family:var(--f-serif) !important;font-size:1.25rem;font-weight:700;}
+  .scratch-page .cal-btn{font-family:var(--f-display) !important;font-size:.72rem;letter-spacing:.12em;font-weight:500;}
+
+  /* Wedding timeline page */
+  .celebrations-kicker{font-family:var(--f-script);font-size:1.9rem;font-style:normal;font-weight:400;letter-spacing:.01em;}
+  .celebrations-title{font-family:var(--f-display);font-weight:500;letter-spacing:.1em;font-size:clamp(1.7rem,6.4vw,2.4rem);}
+  .celebration-name{font-family:var(--f-display);font-weight:600;letter-spacing:.1em;font-size:1.3rem;}
+  .celebration-detail strong{font-family:var(--f-display);font-size:.78em;letter-spacing:.12em;}
+  .celebration-location{font-family:var(--f-display);font-size:.74rem;letter-spacing:.16em;font-weight:500;}
+  .celebrations-closing{font-family:var(--f-serif);font-style:italic;font-weight:600;font-size:1.3rem;}
+
+  /* Closing note page */
+  .note-kicker{font-family:var(--f-script);font-style:normal;font-weight:400;font-size:1.9rem;}
+  .note-title{font-family:var(--f-script);font-weight:400;font-size:clamp(2.1rem,9vw,3rem);line-height:1.2;text-wrap:balance;}
+  .note-forever{font-family:var(--f-display);font-weight:500;letter-spacing:.2em;font-size:1.05rem;}
+  .note-quote{font-family:var(--f-serif);font-weight:600;}
+  .note-invite{font-family:var(--f-serif);font-weight:600;font-size:1.2rem;}
+  .note-love{font-family:var(--f-script);font-size:1.7rem;}
+  .note-names{font-family:var(--f-script);font-size:2.4rem;font-weight:400;}
+  .contact-title{font-family:var(--f-script);font-weight:400;font-size:1.9rem;}
+  .contact-side{font-family:var(--f-display);letter-spacing:.14em;}
+  .contact-number{font-family:var(--f-serif);font-weight:700;font-size:1.15rem;}
+
+  @media (max-width:480px){
+    .celebration-name{font-size:1.15rem;}
+    .celebration-detail strong{font-size:.72em;letter-spacing:.08em;}
+  }
+</style>
+<style>
+  /* Let the temple watermark show softly through the closing-page cards */
+  .note-inner{background:rgba(255,255,255,.72);}
+  .contact-details{background:rgba(255,255,255,.72);}
+</style>
+<style>
+  /* Slightly smaller Engagement / Muhurtham / Reception boxes so the watermark shows */
+  .celebrations-page{padding-top:44px;padding-bottom:44px;}
+  .celebration-card{
+    width:92%;
+    margin:0 auto 12px;
+    padding:20px 18px 18px;
+  }
+  .celebration-card::before{inset:7px;}
+  .celebration-name{font-size:1.15rem;margin-bottom:2px;}
+  .celebration-tamil{font-size:1rem;margin:0 0 8px;}
+  .celebration-tamil::after{margin-top:3px;}
+  .celebration-detail{font-size:1.1rem;margin:2px 0;}
+  .celebration-location{margin-top:9px;padding:7px 22px;font-size:.7rem;}
+  .engagement-illustration img{max-height:210px;}
+  .muhurtham-image{max-height:190px;}
+  .reception-image{max-height:200px;}
+  .celebrations-divider{margin-bottom:18px;}
+  @media (max-width:480px){
+    .celebration-card{width:94%;padding:18px 12px 16px;}
+    .celebration-name{font-size:1.05rem;}
+    .celebration-detail{font-size:.98rem;margin:2px 0;}
+    .celebration-detail strong{font-size:.7em;}
+    .reception-card{grid-template-columns:minmax(80px,30%) 1fr;gap:8px;}
+    .engagement-card{grid-template-columns:32% 1fr;gap:8px;}
+    .muhurtham-card{grid-template-columns:1fr 32%;gap:8px;}
+    .engagement-illustration img{max-height:170px;}
+    .muhurtham-image{max-height:160px;}
+    .reception-image{max-height:165px;}
+  }
+</style>
+<style>
+  /* Cover (page 1) and welcome (page 2) share the same size, position and background */
+  .cover,
+  .welcome-page{
+    background:var(--cream);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    gap:0;
+    overflow:hidden;
+  }
+  .welcome-page{
+    height:100vh;
+    height:100dvh;
+    min-height:100vh;
+    min-height:100dvh;
+  }
+  .cover-img,
+  .welcome-page img{
+    display:block;
+    width:min(100vw, calc(100vh * 1240 / 1748));
+    width:min(100vw, calc(100dvh * 1240 / 1748));
+    height:auto;
+    max-width:none;
+    max-height:none;
+    object-fit:contain;
+  }
+</style>
+<style>
+  /* Smaller scratch card + countdown, everything pulled higher on mobile */
+  .scratch-inner{padding:18px 20px 22px;}
+  .scratch-card{height:150px;}
+  .scratch-countdown{margin-top:18px;padding:18px 0 4px;}
+  .scratch-countdown .section-title{margin-bottom:4px;}
+  .scratch-countdown .section-lede{margin-bottom:14px;}
+  .cal-box{margin-top:20px;padding:18px 16px 16px;}
+
+  @media (max-width:480px){
+    .scratch-page{padding:78px 14px 40px;}
+    .scratch-inner{padding:8px 6px 18px;}
+    .scratch-eyebrow{margin:0 0 4px;}
+    .scratch-mark{margin:0 0 0;}
+    .scratch-title{margin:0 0 4px;}
+    .scratch-title::after{margin:8px auto 10px;}
+    .scratch-card{height:150px;}
+    .scratch-countdown{margin-top:16px;padding:14px 0 4px;}
+    .scratch-countdown .section-title{font-size:2.1rem;margin-bottom:2px;}
+    .scratch-countdown .section-lede{margin-bottom:12px;font-size:1.05rem;}
+    .countdown{gap:8px;}
+    .scratch-page .countdown .unit{min-width:60px;}
+    .scratch-page .countdown .num{font-size:1.5rem;}
+    .scratch-page .countdown .lbl{font-size:.56rem;letter-spacing:.14em;}
+    .cal-box{margin-top:16px;padding:16px 12px 14px;}
+    .cal-title{font-size:1.55rem;margin-bottom:8px;}
+    .cal-row{margin:6px 0;}
+  }
+</style>
+<style>
+  /* Door-opening animation for the cover */
+  .cover{perspective:1400px;}
+  .cover-img{display:none;}
+  .cover-art{
+    position:relative;
+    width:min(100%, calc(82vh * 1240 / 1748));
+    aspect-ratio:1240/1748;
+    height:auto;
+  }
+  .cover-door{
+    position:absolute;
+    inset:0;
+    width:50%;
+    z-index:2;
+    background-size:200% 100%;
+    background-repeat:no-repeat;
+    background-color:#0E0E0E;
+    transform-style:preserve-3d;
+    transition:transform .95s cubic-bezier(.71,0,.31,1), box-shadow .95s ease;
+    will-change:transform;
+  }
+  .cover-door-left{
+    left:0;
+    background-position:left top;
+    transform-origin:left center;
+    box-shadow:6px 0 24px rgba(0,0,0,.35);
+  }
+  .cover-door-right{
+    left:auto;
+    right:0;
+    background-position:right top;
+    transform-origin:right center;
+    box-shadow:-6px 0 24px rgba(0,0,0,.35);
+  }
+  .cover.opening{pointer-events:none;}
+  .cover.opening .cover-door-left{transform:rotateY(-98deg) translateX(-2%);box-shadow:24px 0 40px rgba(0,0,0,.5);}
+  .cover.opening .cover-door-right{transform:rotateY(98deg) translateX(2%);box-shadow:-24px 0 40px rgba(0,0,0,.5);}
+  .cover-flare{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,241,191,.95) 0%, rgba(255,224,140,.55) 35%, rgba(255,224,140,0) 72%);
+    transform:translate(-50%,-50%) scale(0);
+    opacity:0;
+    z-index:3;
+    pointer-events:none;
+  }
+  .cover.opening .cover-flare{
+    animation:coverFlare .95s cubic-bezier(.2,.8,.3,1) forwards;
+  }
+  @keyframes coverFlare{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(0);}
+    18%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+    55%{opacity:.9;transform:translate(-50%,-50%) scale(38);}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(60);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cover-door{transition:opacity .5s ease;}
+    .cover.opening .cover-door-left,
+    .cover.opening .cover-door-right{transform:none;opacity:0;}
+    .cover-flare{display:none;}
+  }
+</style>
+<style>
+  /* Frosted-glass look for the closing note + contact boxes, with rounded corners */
+  .note-inner,
+  .contact-details{
+    background:rgba(255,255,255,.4);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    backdrop-filter:blur(14px) saturate(1.2);
+    border-radius:26px;
+    border-color:rgba(198,154,62,.55);
+  }
+  .note-page::before{opacity:.36 !important;}
+  @media (max-width:480px){
+    .note-page::before{opacity:.32 !important;}
+  }
+  .note-inner::before{
+    border-radius:20px;
+  }
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .note-inner,
+    .contact-details{background:rgba(255,255,255,.85);}
+  }
+</style>
+<style>
+  /* Intro video replaces the old "Open Invitation" cover */
+  .cover.intro-video{background:#000;cursor:pointer;}
+  .cover.intro-video video{width:100%;height:100%;object-fit:contain;display:block;background:#000;}
+  @media (max-width:700px){ .cover.intro-video video{object-fit:cover;} }
+</style>
+<style>
+  /* Touch-finger prompt shown after the intro video ends */
+  .cover.intro-video{cursor:default;}
+  .cover.intro-video.ready{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .touch-hint{
+    position:absolute; left:0; right:0; bottom:9%;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    pointer-events:none; opacity:0; transition:opacity .6s ease;
+  }
+  .cover.ready .touch-hint{opacity:1;}
+  .touch-finger{
+    position:relative; z-index:2; font-size:54px; line-height:1;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.55));
+    animation:fingerTap 1.4s ease-in-out infinite; transform-origin:50% 100%;
+  }
+  .touch-ring{
+    position:absolute; top:0; width:56px; height:56px; border-radius:50%;
+    border:2px solid #E7CE8F; opacity:0; z-index:1;
+    animation:ringPulse 1.4s ease-out infinite;
+  }
+  .touch-label{
+    font-family:'Times New Roman',Times,serif; font-size:1.05rem; letter-spacing:.14em;
+    text-transform:uppercase; color:#F3E4C6; text-shadow:0 2px 8px rgba(0,0,0,.7);
+    animation:labelGlow 1.4s ease-in-out infinite;
+  }
+  @keyframes fingerTap{
+    0%,100%{transform:translateY(10px) scale(1);}
+    45%{transform:translateY(-6px) scale(1.06);}
+    60%{transform:translateY(6px) scale(.94);}
+  }
+  @keyframes ringPulse{
+    0%,45%{transform:scale(.4);opacity:0;}
+    60%{opacity:.9;}
+    100%{transform:scale(1.9);opacity:0;}
+  }
+  @keyframes labelGlow{0%,100%{opacity:.75}50%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){
+    .touch-finger,.touch-ring,.touch-label{animation:none;}
+    .touch-ring{display:none;}
+  }
+</style>
+<style>
+  /* Scratch-card page: moderately compact */
+  .scratch-page{min-height:0 !important;padding:68px 18px 40px !important;align-items:flex-start !important;}
+  .scratch-inner{padding:12px 12px 18px !important;}
+  .scratch-page .scratch-eyebrow{font-size:.74rem !important;margin:0 0 3px !important;}
+  .scratch-page .scratch-mark{font-size:1.28rem !important;margin:0 !important;}
+  .scratch-page .scratch-title{font-size:clamp(1.9rem,9vw,2.7rem) !important;margin:0 0 3px !important;line-height:1.18 !important;}
+  .scratch-title::after{margin:7px auto 8px !important;}
+  .scratch-divider{margin:6px auto 12px !important;font-size:1rem !important;}
+  .scratch-card{height:135px !important;}
+  .scratch-page .scratch-hint strong{font-size:.92rem !important;}
+  .scratch-page .scratch-hint span{font-size:.92rem !important;}
+  .scratch-page .revealed-date .small{font-size:.64rem !important;}
+  .scratch-page .revealed-date .date-main{font-size:clamp(1.45rem,7vw,2.45rem) !important;}
+  .scratch-page .revealed-date .date-day{font-size:1.1rem !important;margin-top:9px !important;}
+  .revealed-date{padding:16px 12px !important;}
+  .scratch-countdown{margin-top:16px !important;padding:16px 0 0 !important;}
+  .scratch-page .scratch-countdown .section-title{font-size:2.1rem !important;margin-bottom:1px !important;}
+  .scratch-page .scratch-countdown .section-lede{font-size:1.02rem !important;margin-bottom:10px !important;}
+  .countdown{gap:7px !important;}
+  .scratch-page .countdown .unit{min-width:58px !important;padding:7px 5px !important;}
+  .scratch-page .countdown .num{font-size:1.4rem !important;}
+  .scratch-page .countdown .lbl{font-size:.54rem !important;}
+  .cal-box{margin-top:14px !important;padding:14px 14px 13px !important;}
+  .scratch-page .cal-title{font-size:1.5rem !important;margin-bottom:6px !important;}
+  .scratch-page .cal-label{font-size:.65rem !important;}
+  .scratch-page .cal-value{font-size:1.12rem !important;line-height:1.35 !important;}
+  .cal-row{margin:5px 0 !important;}
+  .cal-actions{margin-top:14px !important;gap:9px !important;}
+  .scratch-page .cal-btn{font-size:.7rem !important;padding:9px 16px !important;}
+  .scratch-complete{margin-top:10px !important;}
+</style>
+<style>
+  /* Shared theme background (garland, banana leaves & flowers) for the date, timeline and note pages */
+  :root{--theme-bg:url("assets/img2.webp");}
+  /* Scratch (date) page background */
+  .scratch-page{
+    background-color:#F6F0DB !important;
+    background-image:var(--theme-bg) !important;
+    background-repeat:no-repeat !important;
+    background-position:center top !important;
+    background-size:cover !important;
+    min-height:100vh !important;
+    min-height:100dvh !important;
+    padding-top:118px !important;
+    padding-bottom:70px !important;
+  }
+  /* keep the temple watermark on top of the new background (no sky gradient, so the artwork stays clear) */
+  .scratch-page::before{
+    content:"" !important;
+    display:block !important;
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:var(--temple-wm) !important;
+    background-repeat:no-repeat !important;
+    background-position:center 14% !important;
+    background-size:contain !important;
+    opacity:.32 !important;
+  }
+  @media (max-width:600px){
+    .scratch-page::before{background-size:85% auto !important;opacity:.3 !important;}
+  }
+  .scratch-page::after{display:none !important;}
+  .scratch-inner{
+    background:transparent !important;
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+  }
+  @media (min-width:701px){
+    .scratch-page{background-size:auto 100% !important;}
+  }
+</style>
+<style>
+  /* Same theme for Wedding Timeline + closing Guest Note pages */
+  .celebrations-page,
+  .note-page{
+    background-color:#F6F0DB !important;
+    background-image:var(--theme-bg) !important;
+    background-repeat:no-repeat !important;
+    background-position:center top !important;
+    background-size:cover !important;
+    padding-top:110px !important;
+    padding-bottom:70px !important;
+  }
+  .celebrations-page::before,
+  .note-page::before{
+    content:"" !important;
+    display:block !important;
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:var(--temple-wm) !important;
+    background-repeat:no-repeat !important;
+    background-position:center 14% !important;
+    background-size:contain !important;
+    opacity:.32 !important;
+  }
+  @media (max-width:600px){
+    .celebrations-page::before,
+    .note-page::before{background-size:85% auto !important;opacity:.3 !important;}
+  }
+  /* no blur over the artwork; keep a light tint so text stays readable */
+  .note-inner,
+  .contact-details{
+    background:rgba(255,255,255,.55) !important;
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+  }
+  @media (min-width:701px){
+    .celebrations-page,
+    .note-page{background-size:auto 100% !important;}
+  }
+</style>
+<style>
+  /* Stronger text colours on the date scratch page so they read clearly over the artwork */
+  .scratch-page .scratch-eyebrow,
+  .scratch-page .scratch-mark,
+  .scratch-page .scratch-title,
+  .scratch-page .scratch-countdown .section-title,
+  .scratch-page .scratch-countdown .section-lede{
+    color:#3A0912 !important;
+    font-weight:700 !important;
+    text-shadow:0 0 5px rgba(255,250,235,.95), 0 0 10px rgba(255,250,235,.85), 0 1px 2px rgba(255,250,235,.9);
+  }
+  .scratch-page .scratch-title,
+  .scratch-page .scratch-countdown .section-title{font-weight:600 !important;}
+  .scratch-page .scratch-countdown .section-lede{color:#2E1710 !important;}
+  .scratch-page .countdown .num{
+    color:#3A0912 !important;
+    text-shadow:0 0 5px rgba(255,250,235,.95), 0 0 10px rgba(255,250,235,.8);
+  }
+  .scratch-page .countdown .lbl{
+    color:#3A2418 !important;
+    font-weight:700 !important;
+    text-shadow:0 0 5px rgba(255,250,235,.95), 0 0 8px rgba(255,250,235,.8);
+  }
+</style>
+<style>
+  /* Wedding Timeline page: clearer text over the artwork */
+  .celebrations-page .celebrations-closing{
+    color:#3A0912 !important;
+    font-weight:700 !important;
+    text-shadow:0 0 5px rgba(255,250,235,.98), 0 0 10px rgba(255,250,235,.9), 0 0 16px rgba(255,250,235,.8);
+  }
+  .celebrations-page .celebrations-kicker,
+  .celebrations-page .celebrations-title{
+    color:#3A0912 !important;
+    text-shadow:0 0 5px rgba(255,250,235,.95), 0 0 10px rgba(255,250,235,.85);
+  }
+</style>
+<style>
+  /* Touch prompt: maroon + gold badge so it stays visible on the light video frame */
+  .touch-hint{bottom:7%;gap:12px;}
+  .touch-finger{
+    width:66px;height:66px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:36px;
+    border-radius:50%;
+    background:#54121C;
+    border:2px solid #E7CE8F;
+    box-shadow:0 6px 18px rgba(0,0,0,.45), 0 0 0 4px rgba(84,18,28,.35);
+    filter:none;
+  }
+  .touch-ring{
+    width:66px;height:66px;
+    border:3px solid #C69A3E;
+  }
+  .touch-label{
+    padding:9px 24px;
+    border-radius:999px;
+    background:#54121C;
+    border:1px solid #E7CE8F;
+    color:#F3E4C6;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-shadow:none;
+    box-shadow:0 6px 16px rgba(0,0,0,.4);
+  }
+</style>
+<style>
+  /* Last page (guest note + contact): darker, clearer text */
+  .note-page .note-kicker,
+  .note-page .note-title,
+  .note-page .note-forever,
+  .note-page .note-love,
+  .note-page .note-names,
+  .note-page .contact-title,
+  .note-page .contact-side{
+    color:#3A0912 !important;
+    text-shadow:0 0 6px rgba(255,250,235,.9);
+  }
+  .note-page .note-infinity{color:#7B1E2B !important;}
+  .note-page .note-quote,
+  .note-page .note-invite,
+  .note-page .contact-number{
+    color:#2E1710 !important;
+    font-weight:600 !important;
+    text-shadow:0 0 6px rgba(255,250,235,.9);
+  }
+  .note-page .note-names .heart{color:#B3122B !important;text-shadow:none;}
+</style>
+<style>
+  /* Add to Calendar buttons: solid maroon + gold so they stand out on the artwork */
+  .scratch-page .cal-btn,
+  .scratch-page .cal-btn-alt{
+    background:#54121C !important;
+    color:#F3E4C6 !important;
+    border:1px solid #E7CE8F !important;
+    box-shadow:0 4px 12px rgba(84,18,28,.3);
+    font-weight:600 !important;
+  }
+  .scratch-page .cal-btn:hover,
+  .scratch-page .cal-btn-alt:hover{background:#7B1E2B !important;color:#fff !important;}
+  .scratch-page .cal-label{color:#7A5006 !important;font-weight:700 !important;}
+</style>
+<style>
+  .scratch-page .cal-value-ta{margin-top:7px !important;font-size:1.02rem !important;line-height:1.6 !important;font-weight:600 !important;color:#3A0912 !important;}
+</style>
+<style>
+  /* Bigger "Where" text + Open Maps button in the date-page box */
+  .scratch-page .cal-label{font-size:.95rem !important;letter-spacing:.3em !important;margin-bottom:6px !important;}
+  .scratch-page .cal-value{font-size:1.35rem !important;line-height:1.35 !important;}
+  .scratch-page .cal-value-ta{font-size:1.25rem !important;margin-top:9px !important;line-height:1.6 !important;}
+  .cal-box{padding:16px 14px 16px !important;}
+  .scratch-page .cal-maps{margin-top:14px !important;padding:10px 28px !important;font-size:.85rem !important;}
+</style>
+<style>
+  /* Address text back to previous size; only the "WHERE" label stays larger */
+  .scratch-page .cal-value{font-size:1.12rem !important;line-height:1.35 !important;}
+  .scratch-page .cal-value-ta{font-size:1.02rem !important;margin-top:7px !important;line-height:1.6 !important;}
+  .cal-box{padding:14px 14px 13px !important;}
+  /* Open Maps + Google Calendar buttons inside the timeline cards */
+  .celebration-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px;}
+  .celebration-actions .celebration-location{margin-top:0 !important;padding:8px 16px !important;font-size:.66rem !important;letter-spacing:.08em !important;}
+</style>
+<style>
+  /* Welcome page now plays the Guru & Mithra invitation video */
+  .welcome-page{background:#F6F0DB !important;}
+  .welcome-page video{
+    display:block;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    object-fit:contain;
+    background:#F6F0DB;
+  }
+</style>
+<style>
+  /* Watermark is burned into the video itself; plain cream page behind it */
+  .welcome-page{background:#F6F0DB !important;}
+  .welcome-page::before{content:none !important;}
+  .welcome-page video{mix-blend-mode:normal;}
+</style>
+</head>
+<body>
+<div id="petals" aria-hidden="true"></div>
+<canvas id="crackers" aria-hidden="true"></canvas>
+
+
+<button id="musicToggle" type="button" aria-label="Play music" aria-pressed="false" title="Play music">
+  <span class="play-icon" aria-hidden="true">♫</span>
+  <span class="pause-icon" aria-hidden="true">♫</span>
+</button>
+<audio id="weddingSong" preload="auto" loop playsinline aria-label="Wedding invitation music">
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="cover intro-video" id="cover" aria-label="Wedding invitation intro video">
+  <video id="introVideo" muted autoplay playsinline webkit-playsinline preload="auto" aria-label="Guru weds Mithra intro">
+    <source src="assets/intro.mp4" type="video/mp4">
+  </video>
+  <div class="touch-hint" id="touchHint" aria-hidden="true">
+    <span class="touch-ring"></span>
+    <span class="touch-finger">&#128070;</span>
+    <span class="touch-label">Touch to open</span>
+  </div>
+</div>
+
+<section class="welcome-page" id="welcomePage" aria-label="Guru weds Mithra invitation video">
+  <video id="welcomeVideo" muted playsinline webkit-playsinline preload="auto" aria-label="Guru and Mithra wedding invitation">
+    <source src="assets/welcome.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section class="scratch-page" id="scratch-page" aria-label="Scratch to reveal wedding date">
+  <div class="scratch-inner">
+    <p class="scratch-eyebrow">A LITTLE SURPRISE</p>
+    <p class="scratch-mark">Mark your heart</p>
+    <h2 class="scratch-title">Remember the date</h2>
+    <div class="scratch-divider" aria-hidden="true">✦</div>
+    <div class="scratch-card" id="scratchCard">
+      <div class="revealed-date" aria-live="polite">
+        <span class="small">OUR WEDDING DAY</span>
+        <span class="date-main">25 October 2026</span>
+        <span class="date-day">SUNDAY</span>
+      </div>
+      <canvas id="scratchCanvas" aria-label="Scratch this golden box to reveal the wedding date"></canvas>
+      <div class="scratch-hint" aria-hidden="true">
+        <strong>SCRATCH HERE</strong>
+        <span>✦ Reveal the date ✦</span>
+      </div>
+    </div>
+
+    <section id="countdown-section" class="scratch-countdown" aria-label="Countdown to the wedding">
+      <h2 class="section-title">Counting Down</h2>
+      <p class="section-lede">Until Guru &amp; Mithra tie the knot</p>
+      <div class="countdown" id="countdown">
+        <div class="unit"><span class="num" id="cd-days">–</span><span class="lbl">DAYS</span></div>
+        <div class="unit"><span class="num" id="cd-hours">–</span><span class="lbl">HOURS</span></div>
+        <div class="unit"><span class="num" id="cd-mins">–</span><span class="lbl">MINS</span></div>
+        <div class="unit"><span class="num" id="cd-secs">–</span><span class="lbl">SECS</span></div>
+      </div>
+
+      <div class="cal-box" aria-label="Add the wedding to your calendar">
+        <div class="cal-row"><span class="cal-label">Where</span><span class="cal-value">SRI SELLANDIAMMAN MARRIAGE HALL,<br>P VELUR, NAMAKKAL</span><span class="cal-value cal-value-ta" lang="ta">ஸ்ரீ செல்லாண்டியம்மன் திருமண மண்டபம்,<br>பரமத்தி-வேலூர், நாமக்கல்</span></div>
+        <a class="celebration-location cal-maps" href="https://maps.app.goo.gl/t7E5wJGd9YoHoXBw6" target="_blank" rel="noopener noreferrer">Open Maps</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="celebrations-page" id="celebrations" aria-label="Wedding celebrations">
+  <div class="celebrations-inner">
+    <h2 class="celebrations-title">Wedding Timeline</h2>
+    <div class="celebrations-divider" aria-hidden="true">✦</div>
+
+    <div class="celebration-card engagement-card">
+      <div class="engagement-illustration">
+        <img src="assets/img6.jpg" alt="Engagement Couple">
+      </div>
+      <div class="engagement-info">
+        <h3 class="celebration-name">Engagement</h3>
+        <div class="celebration-tamil">நிச்சயதார்த்தம்</div>
+        <p class="celebration-detail"><strong>Date:</strong> 24th October 2026</p>
+        <p class="celebration-detail"><strong>Time:</strong> 7:00 PM to 9:30 PM</p>
+        <div class="celebration-actions">
+          <a class="celebration-location" href="https://maps.app.goo.gl/y2e9fSL9i6zF6fLz6" target="_blank" rel="noopener noreferrer">Open Maps</a>
+          <a class="celebration-location gcal-link" href="#" target="_blank" rel="noopener noreferrer" data-title="Guru & Mithra — Engagement" data-start="20261024T190000" data-end="20261024T213000" data-map="https://maps.app.goo.gl/y2e9fSL9i6zF6fLz6">Google Calendar</a>
+        </div>
+    
+      </div>
+    </div>
+
+    <div class="celebration-card muhurtham-card">
+      <div class="muhurtham-info">
+      <h3 class="celebration-name">Muhurtham</h3>
+      <div class="celebration-tamil">சுப முகூர்த்தம்</div>
+      <p class="celebration-detail"><strong>Date:</strong> 25th October 2026</p>
+      <p class="celebration-detail"><strong>Time:</strong> 4:30 AM to 6:00 AM</p>
+      <div class="celebration-actions">
+        <a class="celebration-location" href="https://maps.app.goo.gl/cauMYDjPDYEu8WTA7" target="_blank" rel="noopener noreferrer">Open Maps</a>
+        <a class="celebration-location gcal-link" href="#" target="_blank" rel="noopener noreferrer" data-title="Guru & Mithra — Muhurtham" data-start="20261025T043000" data-end="20261025T060000" data-map="https://maps.app.goo.gl/cauMYDjPDYEu8WTA7">Google Calendar</a>
+      </div>
+      </div>
+      <img class="muhurtham-image" src="assets/img7.jpg" alt="Groom and bride in traditional attire holding hands">
+    </div>
+
+    <div class="celebration-card reception-card">
+      <img class="reception-image" src="assets/img8.jpg" alt="Bride and groom illustration">
+      <div class="reception-info">
+        <h3 class="celebration-name">Reception</h3>
+        <div class="celebration-tamil">வரவேற்பு</div>
+        <p class="celebration-detail"><strong>Date:</strong> 25th October 2026</p>
+        <p class="celebration-detail"><strong>Time:</strong> 11:00 AM to 2:30 PM</p>
+        <div class="celebration-actions">
+          <a class="celebration-location" href="https://maps.app.goo.gl/y2e9fSL9i6zF6fLz6" target="_blank" rel="noopener noreferrer">Open Maps</a>
+          <a class="celebration-location gcal-link" href="#" target="_blank" rel="noopener noreferrer" data-title="Guru & Mithra — Reception" data-start="20261025T110000" data-end="20261025T143000" data-map="https://maps.app.goo.gl/y2e9fSL9i6zF6fLz6">Google Calendar</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="celebrations-closing">We look forward to celebrating these special moments with you.</p>
+  </div>
+</section>
+
+<section class="note-page" id="guest-note" aria-label="A note for our dear guests">
+  <div class="note-inner">
+    <p class="note-kicker">A note for</p>
+    <h2 class="note-title">Our Dear Guests</h2>
+    <div class="note-forever">Forever Together</div>
+    <div class="note-infinity" aria-hidden="true">∞</div>
+    <p class="note-quote">&ldquo;Where there is love, there is life; where there are blessings, there is a beautiful beginning.&rdquo;</p>
+    <p class="note-invite">We joyfully invite you to be a part of our special day.</p>
+    <p class="note-love">With Love</p>
+    <p class="note-names">Guru <span class="heart" aria-label="love">❤</span> Mithra</p>
+  </div>
+
+  <div class="note-contact">
+    <div class="contact-details" aria-label="Contact details">
+      <h3 class="contact-title">Contact Details</h3>
+  
+      <div class="contact-row">
+        <div class="contact-side">Groom Side</div>
+        <span class="contact-number">+91 78719 26986</span>
+        <div class="contact-actions">
+          <a class="contact-action" href="tel:+917871926986" aria-label="Call Groom Side" title="Call Groom Side">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.2.7 3.3.8.6.1 1.1.6 1.1 1.2v3.1c0 .7-.5 1.2-1.2 1.2C11.1 21.3 2.7 12.9 2.7 2.2 2.7 1.5 3.2 1 3.9 1H7c.6 0 1.1.5 1.2 1.1.1 1.1.4 2.2.8 3.3.1.4 0 .9-.2 1.2l-2.2 2.2z"/></svg>
+          </a>
+          <a class="contact-action" href="https://wa.me/917871926986" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Groom Side" title="WhatsApp Groom Side">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12.05 0C5.49 0 .15 5.34.15 11.91c0 2.1.55 4.15 1.6 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.46-8.41zM12.06 21.8h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.72.97.99-3.63-.23-.37a9.9 9.9 0 1 1 8.38 4.63zm5.44-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35z"/></svg>
+          </a>
+        </div>
+      </div>
+  
+      <div class="contact-row">
+        <div class="contact-side">Bride Side</div>
+        <span class="contact-number">+91 63747 98380</span>
+        <div class="contact-actions">
+          <a class="contact-action" href="tel:+916374798380" aria-label="Call Bride Side" title="Call Bride Side">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.2.7 3.3.8.6.1 1.1.6 1.1 1.2v3.1c0 .7-.5 1.2-1.2 1.2C11.1 21.3 2.7 12.9 2.7 2.2 2.7 1.5 3.2 1 3.9 1H7c.6 0 1.1.5 1.2 1.1.1 1.1.4 2.2.8 3.3.1.4 0 .9-.2 1.2l-2.2 2.2z"/></svg>
+          </a>
+          <a class="contact-action" href="https://wa.me/916374798380" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bride Side" title="WhatsApp Bride Side">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12.05 0C5.49 0 .15 5.34.15 11.91c0 2.1.55 4.15 1.6 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.46-8.41zM12.06 21.8h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.72.97.99-3.63-.23-.37a9.9 9.9 0 1 1 8.38 4.63zm5.44-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.documentElement.classList.add('locked');
+  (function(){
+    var cover = document.getElementById('cover');
+    var video = document.getElementById('introVideo');
+    var song = document.getElementById('weddingSong');
+    var musicToggle = document.getElementById('musicToggle');
+    var finished = false;
+    var ready = false;
+    var hint = document.getElementById('touchHint');
+
+    function tryPlaySong(){
+      if(!song || !song.paused) return;
+      song.volume = 0.85;
+      var p;
+      try{ p = song.play(); }catch(e){}
+      if(p && typeof p.catch === 'function'){ p.catch(function(){ /* blocked or not loaded yet - retried on next touch */ }); }
+    }
+    function showHint(){
+      if(ready || finished) return;
+      ready = true;
+      cover.classList.add('ready');
+      cover.setAttribute('role','button');
+      cover.setAttribute('tabindex','0');
+      cover.setAttribute('aria-label','Touch to open the invitation');
+    }
+
+    function finishIntro(){
+      if(finished || !ready) return;
+      finished = true;
+      cover.classList.add('hide');
+      document.body.classList.add('opened');
+      document.documentElement.classList.remove('locked');
+      window.scrollTo(0,0);
+      /* one song everywhere: it keeps playing if it already started, otherwise it starts now */
+      tryPlaySong();
+      if(window.startWelcomeVideo){ window.startWelcomeVideo(); }
+    }
+
+    if(video){
+      video.muted = true;
+      video.addEventListener('ended', showHint);
+      video.addEventListener('error', showHint);
+      var vp = video.play();
+      if(vp && typeof vp.catch === 'function'){ vp.catch(showHint); }
+      if(video.ended) showHint();
+    }
+    /* safety net: if the video never reports it ended, still show the touch prompt */
+    setTimeout(showHint, 5000);
+    /* the invitation opens only when the guest touches, after the video has finished */
+    cover.addEventListener('click', finishIntro);
+    cover.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); finishIntro(); }
+    });
+
+    /* start the song on the guest's first touch (browsers block autoplay with sound) */
+    var gestureEvents=['pointerdown','touchend','click','keydown'];
+    function firstTouch(e){
+      if(e && e.target && e.target.closest && e.target.closest('#musicToggle')) return;
+      tryPlaySong();
+    }
+    gestureEvents.forEach(function(ev){ document.addEventListener(ev, firstTouch, true); });
+    /* stop listening only once the song is really playing */
+    song.addEventListener('playing', function(){
+      gestureEvents.forEach(function(ev){ document.removeEventListener(ev, firstTouch, true); });
+    });
+
+    function updateMusicButton(){
+      var playing = song && !song.paused;
+      musicToggle.classList.toggle('playing', playing);
+      musicToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      musicToggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+      musicToggle.setAttribute('title', playing ? 'Pause music' : 'Play music');
+    }
+    if(song){
+      song.addEventListener('play', updateMusicButton);
+      song.addEventListener('pause', updateMusicButton);
+      song.addEventListener('ended', updateMusicButton);
+    }
+    musicToggle.addEventListener('click', function(){
+      if(!song) return;
+      if(song.paused){
+        song.volume = 0.85;
+        var p = song.play();
+        if(p && typeof p.catch === 'function'){ p.catch(function(){}); }
+      } else {
+        song.pause();
+      }
+      updateMusicButton();
+    });
+    updateMusicButton();
+    tryPlaySong();   /* works only where the browser allows autoplay; otherwise starts on the first touch */
+  })();
+</script>
+
+<script>
+  (function(){
+    var target = new Date("2026-10-25T00:00:00");
+    var d = document.getElementById('cd-days');
+    var h = document.getElementById('cd-hours');
+    var m = document.getElementById('cd-mins');
+    var s = document.getElementById('cd-secs');
+    var countdownStarted = false;
+    var timer = null;
+
+    function tick(){
+      if(!countdownStarted) return;
+      var now = new Date();
+      var diff = target - now;
+      if(diff < 0) diff = 0;
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var secs = Math.floor((diff % 60000) / 1000);
+      d.textContent = days;
+      h.textContent = String(hours).padStart(2,'0');
+      m.textContent = String(mins).padStart(2,'0');
+      s.textContent = String(secs).padStart(2,'0');
+    }
+
+    window.startWeddingCountdown = function(){
+      if(countdownStarted) return;
+      countdownStarted = true;
+      tick();
+      timer = setInterval(tick, 1000);
+    };
+  })();
+</script>
+
+
+<script>
+  (function(){
+    var page = document.getElementById('scratch-page');
+    var card = document.getElementById('scratchCard');
+    var canvas = document.getElementById('scratchCanvas');
+    if(!page || !card || !canvas) return;
+
+    var ctx = canvas.getContext('2d', {willReadFrequently:true});
+    var drawing = false;
+    var revealed = false;
+    var lastX = 0, lastY = 0;
+    var scratchDistance = 0;
+    var revealThreshold = 0.48;
+
+    function resizeCanvas(){
+      var rect = card.getBoundingClientRect();
+      var ratio = Math.max(1, Math.min(window.devicePixelRatio || 1, 2));
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.setTransform(ratio,0,0,ratio,0,0);
+      drawGoldCover(rect.width, rect.height);
+    }
+
+    function drawGoldCover(w,h){
+      var grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0,'#F7D774');
+      grad.addColorStop(.25,'#D9A31C');
+      grad.addColorStop(.5,'#FFE596');
+      grad.addColorStop(.74,'#B47A08');
+      grad.addColorStop(1,'#EBBB35');
+      ctx.globalCompositeOperation='source-over';
+      ctx.fillStyle=grad;
+      ctx.fillRect(0,0,w,h);
+
+      // Subtle golden foil texture.
+      ctx.globalAlpha=.22;
+      for(var i=0;i<90;i++){
+        var x=Math.random()*w, y=Math.random()*h, r=.4+Math.random()*1.6;
+        ctx.fillStyle=(i%2?'#fff7d9':'#8D5D16');
+        ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+      }
+      ctx.globalAlpha=1;
+      ctx.strokeStyle='rgba(84,18,28,.35)';
+      ctx.lineWidth=1;
+      ctx.strokeRect(13.5,13.5,w-27,h-27);
+    }
+
+    function pointFromEvent(e){
+      var rect=canvas.getBoundingClientRect();
+      var touch=e.touches && e.touches[0];
+      var clientX=touch ? touch.clientX : e.clientX;
+      var clientY=touch ? touch.clientY : e.clientY;
+      return {x:clientX-rect.left,y:clientY-rect.top};
+    }
+
+    function scratchAt(x,y){
+      if(revealed) return;
+      ctx.globalCompositeOperation='destination-out';
+      ctx.beginPath();
+      ctx.arc(x,y,23,0,Math.PI*2);
+      ctx.fill();
+      if(lastX!==null && lastX!==undefined){
+        var dx=x-lastX, dy=y-lastY;
+        scratchDistance += Math.sqrt(dx*dx+dy*dy);
+      }
+      lastX=x; lastY=y;
+      checkProgress();
+    }
+
+    var lastCheck=0;
+    function checkProgress(force){
+      var now=Date.now();
+      if(force!==true && now-lastCheck<150) return;
+      lastCheck=now;
+      // Sample the canvas to estimate how much of the gold coating has been scratched away.
+      var w=canvas.width, h=canvas.height;
+      var step=18;
+      var total=0, transparent=0;
+      try{
+        var data=ctx.getImageData(0,0,w,h).data;
+        for(var y=0;y<h;y+=step){
+          for(var x=0;x<w;x+=step){
+            total++;
+            if(data[(y*w+x)*4+3] < 80) transparent++;
+          }
+        }
+      }catch(err){
+        if(scratchDistance > card.clientWidth*card.clientHeight*0.18) transparent=total;
+      }
+      if(total && transparent/total >= revealThreshold) reveal();
+    }
+
+    function reveal(){
+      if(revealed) return;
+      revealed=true;
+      page.classList.add('revealed');
+      if(window.startWeddingCountdown) window.startWeddingCountdown();
+      document.body.classList.add('date-revealed');
+      if(window.startCrackers) window.startCrackers();
+      // Smoothly scroll the revealed date into view, then let the user continue downward.
+      setTimeout(function(){
+        card.scrollIntoView({behavior:'smooth',block:'center'});
+      },120);
+    }
+
+    function onDown(e){
+      if(revealed) return;
+      e.preventDefault();
+      drawing=true;
+      try{ canvas.setPointerCapture(e.pointerId); }catch(err){}
+      var p=pointFromEvent(e); lastX=p.x; lastY=p.y; scratchAt(p.x,p.y);
+    }
+    function onMove(e){
+      if(!drawing) return;
+      e.preventDefault();
+      var p=pointFromEvent(e); scratchAt(p.x,p.y);
+    }
+    function onUp(e){ drawing=false; lastX=null; lastY=null; checkProgress(true); }
+    if(window.PointerEvent){
+      canvas.addEventListener('pointerdown',onDown);
+      canvas.addEventListener('pointermove',onMove);
+      canvas.addEventListener('pointerup',onUp);
+      canvas.addEventListener('pointercancel',onUp);
+    }else{
+      canvas.addEventListener('mousedown',onDown);
+      window.addEventListener('mousemove',onMove);
+      window.addEventListener('mouseup',onUp);
+      canvas.addEventListener('touchstart',onDown,{passive:false});
+      canvas.addEventListener('touchmove',onMove,{passive:false});
+      canvas.addEventListener('touchend',onUp,{passive:false});
+    }
+
+    var lastW=0;
+    function safeResize(){
+      if(revealed || drawing) return;
+      var w=Math.round(card.getBoundingClientRect().width);
+      if(w===lastW || w===0) return;
+      if(lastW!==0 && scratchDistance>0) return;   /* keep the user's scratch progress */
+      lastW=w;
+      resizeCanvas();
+    }
+    window.addEventListener('resize',safeResize);
+    window.addEventListener('orientationchange',function(){ setTimeout(safeResize,300); });
+    window.addEventListener('load',safeResize);
+    safeResize();
+  })();
+</script>
+
+<script>
+  (function(){
+    var box = document.getElementById('petals');
+    if(!box) return;
+    var flowers = ['🌸','🌼','🌺','🌸','🏵️'];
+    var count = 12;
+    for(var i=0;i<count;i++){
+      var s = document.createElement('span');
+      s.className = 'petal';
+      s.textContent = flowers[i % flowers.length];
+      var size = 14 + Math.random()*10;
+      s.style.left = (Math.random()*96) + 'vw';
+      s.style.fontSize = size + 'px';
+      s.style.setProperty('--sway', ((Math.random()*90)-45) + 'px');
+      s.style.animationDuration = (11 + Math.random()*9) + 's';
+      s.style.animationDelay = (-Math.random()*18) + 's';
+      box.appendChild(s);
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var map = [
+      ['.engagement-card','slide-from-right'],
+      ['.muhurtham-card','slide-from-left'],
+      ['.reception-card','slide-from-right']
+    ];
+    var items = [];
+    map.forEach(function(m){
+      var el = document.querySelector(m[0]);
+      if(el){ el.classList.add(m[1]); items.push(el); }
+    });
+    if(!('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in-view');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.15});
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  /* Crackers (fireworks) burst — runs once after the date is scratched */
+  (function(){
+    var canvas=document.getElementById('crackers');
+    if(!canvas) return;
+    var ctx=canvas.getContext('2d');
+    var W=0,H=0,dpr=1;
+    var parts=[],rockets=[],running=false,started=false,pendingLaunches=0;
+    var colors=['#FFD86B','#FF5A5F','#FF9F1C','#F72585','#4CC9F0','#7CFC8A','#FFFFFF','#E7CE8F'];
+
+    function resize(){
+      dpr=Math.min(window.devicePixelRatio||1,2);
+      W=window.innerWidth; H=window.innerHeight;
+      canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    window.addEventListener('resize',resize);
+
+    function rand(a,b){return a+Math.random()*(b-a);}
+
+    function burst(x,y){
+      var n=Math.round(rand(70,110));
+      var c1=colors[Math.floor(Math.random()*colors.length)];
+      var c2=colors[Math.floor(Math.random()*colors.length)];
+      for(var i=0;i<n;i++){
+        var a=(Math.PI*2*i)/n+rand(-.05,.05);
+        var sp=rand(1.6,6);
+        parts.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,
+          life:1,decay:rand(.009,.019),size:rand(1.4,2.8),
+          color:(i%3===0)?c2:c1});
+      }
+      // little white crackle in the middle
+      for(var j=0;j<14;j++){
+        var b=rand(0,Math.PI*2), sp2=rand(.3,2);
+        parts.push({x:x,y:y,vx:Math.cos(b)*sp2,vy:Math.sin(b)*sp2,life:1,decay:rand(.02,.035),size:rand(1,2),color:'#FFFFFF'});
+      }
+    }
+
+    function launch(){
+      pendingLaunches--;
+      rockets.push({x:rand(W*.12,W*.88),y:H+10,vy:-rand(H*.011,H*.015),ty:rand(H*.14,H*.5)});
+    }
+
+    function frame(){
+      // fade previous frame to leave soft trails
+      ctx.globalCompositeOperation='destination-out';
+      ctx.fillStyle='rgba(0,0,0,.2)';
+      ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation='lighter';
+
+      for(var r=rockets.length-1;r>=0;r--){
+        var k=rockets[r];
+        k.y+=k.vy;
+        parts.push({x:k.x+rand(-.6,.6),y:k.y,vx:rand(-.2,.2),vy:rand(.2,1),life:.7,decay:.05,size:1.6,color:'#FFE9A8'});
+        if(k.y<=k.ty){ burst(k.x,k.y); rockets.splice(r,1); }
+      }
+      for(var i=parts.length-1;i>=0;i--){
+        var p=parts[i];
+        p.vx*=.985; p.vy=p.vy*.985+.045;
+        p.x+=p.vx; p.y+=p.vy; p.life-=p.decay;
+        if(p.life<=0){parts.splice(i,1);continue;}
+        ctx.globalAlpha=Math.max(p.life,0);
+        ctx.fillStyle=p.color;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha=1;
+
+      if(pendingLaunches>0||rockets.length||parts.length){
+        requestAnimationFrame(frame);
+      }else{
+        running=false;
+        ctx.globalCompositeOperation='source-over';
+        ctx.clearRect(0,0,W,H);
+      }
+    }
+
+    window.startCrackers=function(){
+      if(started) return;
+      started=true;
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      resize();
+      var total=16;
+      pendingLaunches=total;
+      for(var i=0;i<total;i++){
+        setTimeout(launch, i*420 + rand(0,180));
+      }
+      if(!running){ running=true; requestAnimationFrame(frame); }
+    };
+  })();
+</script>
+<script>
+  (function(){
+    var title='Guru & Mithra — Wedding (Muhurtham)';
+    var where='Sellandiamman Thirumana Mandapam, P. Veur, Namakkal';
+    var details='Together with our families, we joyfully invite you to the wedding of Guru & Mithra.';
+    // 25 Oct 2026, 4:30–6:00 AM IST (= 24 Oct 23:00 – 25 Oct 00:30 UTC)
+    var g=document.getElementById('calGoogle');
+    if(g){
+      g.href='https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(title)
+        +'&dates=20261025T043000/20261025T060000'
+        +'&ctz='+encodeURIComponent('Asia/Kolkata')
+        +'&details='+encodeURIComponent(details)
+        +'&location='+encodeURIComponent(where);
+    }
+    var b=document.getElementById('calIcs');
+    if(b){
+      b.addEventListener('click',function(){
+        var esc=function(t){return t.replace(/\\/g,'\\\\').replace(/,/g,'\\,').replace(/;/g,'\\;');};
+        var ics=[
+          'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Guru and Mithra//Wedding Invitation//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH',
+          'BEGIN:VEVENT',
+          'UID:guru-mithra-wedding-20261025@invitation',
+          'DTSTAMP:20260928T000000Z',
+          'DTSTART:20261024T230000Z',
+          'DTEND:20261025T003000Z',
+          'SUMMARY:'+esc(title),
+          'LOCATION:'+esc(where),
+          'DESCRIPTION:'+esc(details),
+          'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Guru & Mithra wedding is tomorrow','END:VALARM',
+          'END:VEVENT','END:VCALENDAR'
+        ].join('\r\n');
+        var blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+        var url=URL.createObjectURL(blob);
+        var a=document.createElement('a');
+        a.href=url; a.download='Guru-Mithra-Wedding.ics';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){URL.revokeObjectURL(url);},2000);
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var links=document.querySelectorAll('.gcal-link');
+    for(var i=0;i<links.length;i++){
+      var a=links[i];
+      var map=a.getAttribute('data-map');
+      a.href='https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(a.getAttribute('data-title'))
+        +'&dates='+a.getAttribute('data-start')+'/'+a.getAttribute('data-end')
+        +'&ctz='+encodeURIComponent('Asia/Kolkata')
+        +'&details='+encodeURIComponent('Together with our families, we joyfully invite you to the wedding of Guru & Mithra. Map: '+map)
+        +'&location='+encodeURIComponent(map);
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var v = document.getElementById('welcomeVideo');
+    var started = false;
+    window.startWelcomeVideo = function(){
+      if(started || !v) return;
+      started = true;
+      try{ v.currentTime = 0; }catch(e){}
+      var p = v.play();
+      if(p && typeof p.catch === 'function'){ p.catch(function(){}); }
+    };
+  })();
+</script>
+</body>
+</html>
